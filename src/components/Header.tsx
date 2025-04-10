@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button';
 import { 
   Menu, 
   X, 
+  Home,
+  MapPin,
+  History,
+  UserRound
 } from 'lucide-react';
 
 const Header = () => {
@@ -21,9 +25,22 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="nav-link">About Us</a>
-          <a href="#how-it-works" className="nav-link">How It Works</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="/" className="nav-link flex items-center gap-2">
+            <Home size={18} /> 
+            <span>Home</span>
+          </a>
+          <a href="/nearby" className="nav-link flex items-center gap-2">
+            <MapPin size={18} /> 
+            <span>Nearby</span>
+          </a>
+          <a href="/history" className="nav-link flex items-center gap-2">
+            <History size={18} /> 
+            <span>History</span>
+          </a>
+          <a href="/profile" className="nav-link flex items-center gap-2">
+            <UserRound size={18} /> 
+            <span>Profile</span>
+          </a>
           <div className="flex space-x-3">
             <Button variant="outline" className="font-medium">Login</Button>
             <Button className="bg-roadhelp-blue hover:bg-blue-700 font-medium">Sign Up</Button>
@@ -45,25 +62,36 @@ const Header = () => {
         <div className="md:hidden bg-white border-t border-gray-100 py-4 px-6 animate-fade-in">
           <nav className="flex flex-col space-y-4">
             <a 
-              href="#about" 
-              className="py-2 nav-link"
+              href="/" 
+              className="py-2 nav-link flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              About Us
+              <Home size={18} />
+              <span>Home</span>
             </a>
             <a 
-              href="#how-it-works" 
-              className="py-2 nav-link"
+              href="/nearby" 
+              className="py-2 nav-link flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              How It Works
+              <MapPin size={18} />
+              <span>Nearby</span>
             </a>
             <a 
-              href="#contact" 
-              className="py-2 nav-link"
+              href="/history" 
+              className="py-2 nav-link flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              <History size={18} />
+              <span>History</span>
+            </a>
+            <a 
+              href="/profile" 
+              className="py-2 nav-link flex items-center gap-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <UserRound size={18} />
+              <span>Profile</span>
             </a>
             <div className="flex flex-col space-y-3 pt-3">
               <Button variant="outline" className="w-full font-medium">Login</Button>
