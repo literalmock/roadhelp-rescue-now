@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Car, Tools } from 'lucide-react';
+import { Car, Wrench } from 'lucide-react';
 
 const UserMechanicCallouts = () => {
   return (
@@ -28,7 +28,7 @@ const UserMechanicCallouts = () => {
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <div className="p-8">
               <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6">
-                <Tools className="w-8 h-8 text-roadhelp-orange" />
+                <Wrench className="w-8 h-8 text-roadhelp-orange" />
               </div>
               <h3 className="text-2xl font-bold mb-4">I'm a mechanic</h3>
               <p className="text-gray-600 mb-6">
