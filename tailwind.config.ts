@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -54,6 +53,10 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				roadhelp: {
+					dark: '#2C2C2C',
+					purple: '#522546',
+					pink: '#F7374F',
+					rose: '#88304E',
 					blue: '#0056b3',
 					orange: '#ff7b00',
 					lightgray: '#f8f9fa',

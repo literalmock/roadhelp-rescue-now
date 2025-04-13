@@ -26,13 +26,13 @@ const NearbyServices = () => {
   ];
 
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-roadhelp-dark/5">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Nearby Repair Services</h2>
+          <h2 className="text-2xl font-bold text-roadhelp-dark">Nearby Repair Services</h2>
           <Button 
             variant="ghost" 
-            className="text-roadhelp-blue flex items-center gap-1"
+            className="text-roadhelp-purple flex items-center gap-1 hover:text-roadhelp-pink"
             onClick={() => navigate('/nearby')}
           >
             View all <ArrowRight size={16} />
@@ -41,13 +41,13 @@ const NearbyServices = () => {
         
         <div className="grid md:grid-cols-2 gap-4">
           {services.map((service) => (
-            <Card key={service.id} className="cursor-pointer hover:shadow-md transition-shadow">
+            <Card key={service.id} className="cursor-pointer hover:shadow-md transition-shadow border-roadhelp-purple/10">
               <CardContent className="pt-6">
                 <div className="flex justify-between">
                   <div>
-                    <h3 className="font-semibold text-lg">{service.name}</h3>
+                    <h3 className="font-semibold text-lg text-roadhelp-dark">{service.name}</h3>
                     <div className="flex items-center text-gray-500 mt-1">
-                      <MapPin size={14} className="mr-1" /> 
+                      <MapPin size={14} className="mr-1 text-roadhelp-purple" /> 
                       <span>{service.address}</span>
                     </div>
                     <div className="mt-2 text-sm text-gray-600">
@@ -55,7 +55,7 @@ const NearbyServices = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <span className="bg-roadhelp-blue/10 text-roadhelp-blue px-2 py-1 rounded text-sm">
+                    <span className="bg-roadhelp-rose/10 text-roadhelp-rose px-2 py-1 rounded text-sm">
                       {service.distance} km
                     </span>
                   </div>
