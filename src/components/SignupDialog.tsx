@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -26,7 +25,11 @@ const phoneSchema = z.object({
 type EmailFormValues = z.infer<typeof emailSchema>;
 type PhoneFormValues = z.infer<typeof phoneSchema>;
 
-const SignupDialog = () => {
+interface SignupDialogProps {
+  buttonProps?: React.ComponentProps<typeof Button>;
+}
+
+const SignupDialog = ({ buttonProps }: SignupDialogProps) => {
   const emailForm = useForm<EmailFormValues>({
     resolver: zodResolver(emailSchema),
     defaultValues: {
@@ -59,10 +62,16 @@ const SignupDialog = () => {
     // Handle Google signup logic here
   };
 
+  const defaultButtonProps = {
+    className: "bg-roadhelp-purple hover:bg-roadhelp-rose text-white font-medium"
+  };
+
+  const mergedButtonProps = { ...defaultButtonProps, ...buttonProps };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-roadhelp-purple hover:bg-roadhelp-rose text-white font-medium">
+        <Button {...mergedButtonProps}>
           Sign Up
         </Button>
       </DialogTrigger>

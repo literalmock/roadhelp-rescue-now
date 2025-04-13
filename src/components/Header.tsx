@@ -117,6 +117,9 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <div className="flex flex-col space-y-3 pt-3">
                 <Button variant="outline" className="w-full text-white border-roadhelp-purple hover:bg-roadhelp-purple">Login</Button>
+                <SignupDialog buttonProps={{ 
+                  className: "w-full bg-roadhelp-purple hover:bg-roadhelp-rose text-white font-medium" 
+                }} />
               </div>
             </nav>
           </div>
