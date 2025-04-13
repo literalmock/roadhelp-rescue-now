@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { 
@@ -63,14 +62,12 @@ const Header = () => {
     <>
       <header className={`${isMobile ? '' : 'fixed'} top-0 left-0 right-0 bg-roadhelp-dark shadow-md z-50`}>
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-2">
               <span className="text-2xl font-bold text-white">Road<span className="text-roadhelp-pink">help</span></span>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex items-center space-x-8">
               <a href="/" className={`flex items-center gap-2 ${isActive('/') ? 'text-roadhelp-pink' : 'text-gray-300'}`}>
@@ -96,10 +93,8 @@ const Header = () => {
             </nav>
           )}
 
-          {/* Mobile Header - Right Side Buttons */}
           {isMobile && (
             <div className="flex items-center space-x-3">
-              <SignupDialog />
               <button 
                 className="text-white"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -111,12 +106,16 @@ const Header = () => {
           )}
         </div>
 
-        {/* Mobile Top Menu */}
         {isMobile && isMenuOpen && (
           <div className="bg-roadhelp-dark border-t border-gray-700 py-4 px-6 animate-fade-in">
             <nav className="flex flex-col space-y-4">
               <div className="flex flex-col space-y-3 pt-3">
-                <Button variant="outline" className="w-full text-white border-roadhelp-purple hover:bg-roadhelp-purple">Login</Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full text-roadhelp-pink border-roadhelp-purple hover:bg-roadhelp-purple hover:text-white"
+                >
+                  Login
+                </Button>
                 <SignupDialog buttonProps={{ 
                   className: "w-full bg-roadhelp-purple hover:bg-roadhelp-rose text-white font-medium" 
                 }} />
@@ -126,7 +125,6 @@ const Header = () => {
         )}
       </header>
       
-      {/* Mobile Bottom Navigation */}
       {isMobile && renderMobileBottomNav()}
     </>
   );
